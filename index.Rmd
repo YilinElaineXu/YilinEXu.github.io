@@ -1,0 +1,16 @@
+---
+title: "My awesome website"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cerulean
+---
+
+![](image/image1.jpg)
+
+# This is Elaine's website
+
+Links to my other websites
+
+* [Photosite](https://elainexu0421.wixsite.com/photosite)
