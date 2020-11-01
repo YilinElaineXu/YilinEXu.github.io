@@ -1,7 +1,7 @@
 name: "Yay internet!"
 output_dir: "."
 navbar:
-  title: "Yilin Xu"
+  title: "Yilin (Elaine) Xu"
   right:
     - text: "About"
       href: about.html
@@ -15,4 +15,4 @@ navbar:
       href: https://www.instagram.com/eatyourbaconnotmine/
 output:
   html_document:
-    theme: cerulean
+    theme: flatly

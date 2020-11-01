@@ -1,20 +1,18 @@
 ---
-title: "My awesome website"
+title: "This is Elaine's website"
 output: 
   html_document:
     toc: true
     toc_float: true
-    theme: cerulean
+    theme: flatly
 ---
 
 ![](image/image1.jpg)
-
-# This is Elaine's website
 
 Links to my other websites
 
 * [Photosite](https://elainexu0421.wixsite.com/photosite)
 
-## Link to page within the site
+# Link to page within the site
 
 [About me](about.html)
