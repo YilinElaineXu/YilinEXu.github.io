@@ -1,10 +1,43 @@
 ---
-title: "About"
+title: "About me"
 output: 
   html_document:
     toc: true
     toc_float: true
     theme: flatly
 ---
+<div style="margin-bottom:50px;">
+</div>
 
-This page shows some info about me
+## Academic Experience {.tabset}
+
+### Public Health Project
+
+__Finding relations between protein somatic mutation and specific cancer types__
+
+* __Data cleaning__: wrangle and tidy the dataset by R, focusing on two cancer types of Luminal A and Luminal B.
+
+* __Data analyzing__: applied Bonferroni correction and linear regression to screen out four kinds of proteins that are most significant.
+
+* __Data visualization__: plotting the correlations among proteins via heat map.
+
+__Digital behavior data mining through twitter__
+
+* __Data extracting and cleaning__: collected data extracted from Twitter API and cleaned the data with keywords related to _Star Wars_.
+
+* __Data visualization__: establish an interactive visualization app including a __word-cloud__ that exhibits high frequent occurrence of words related to Star wars and a __geo-map__ that shows Twitter users' profiles.
+
+
+### Working Experience
+
+__Deloitte Touche Tohmatsu CPA__
+
+* __Data cleaning__: identified and tidy anomalous data among over 300,000 lines with SQL and VBA.
+
+* __Data processing__: created a tool via R to enable automatic data search, match and calculation more effectively.
+
+__Ernst & Young__
+
+* __Data visualization__: tidy and wrangle the data and compiled diagrams to show the annual change of profit and cost.
+
+* __Consulting__: lead a group of three to complete cross-border e-commerce strategy consulting project, and report the feasibility of e-commerce construction.
