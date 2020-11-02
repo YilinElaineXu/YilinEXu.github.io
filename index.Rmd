@@ -6,13 +6,26 @@ output:
     toc_float: true
     theme: flatly
 ---
+<div style="margin-bottom:50px;">
+</div>
 
 ![](image/image1.jpg)
 
-Links to my other websites
+<div style="margin-bottom:50px;">
+</div>
+
+### More about me
+
+First year Master student major in Biostatistics at Columbia University.
+
+* [About me](about.html)
+
+
+<div style="margin-bottom:30px;">
+</div>
+
+### Interests
+
+Photogrphing, painting and printmaking. Welcome to check out my photosite.
 
 * [Photosite](https://elainexu0421.wixsite.com/photosite)
-
-# Link to page within the site
-
-[About me](about.html)

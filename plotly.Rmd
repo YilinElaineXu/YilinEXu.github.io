@@ -1,0 +1,22 @@
+---
+title: "Plotly"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: flatly
+---
+
+# This is plotly set up
+
+```{r, include=FALSE}
+library(p8105.datasets)
+library(tidyverse)
+library(plotly)
+```
+
+
+```{r}
+
+```
+
