@@ -17,4 +17,4 @@ navbar:
       href: https://www.instagram.com/eatyourbaconnotmine/
 output:
   html_document:
-    theme: flatly
+    theme: paper

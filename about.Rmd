@@ -4,7 +4,7 @@ output:
   html_document:
     toc: true
     toc_float: true
-    theme: flatly
+    theme: paper
 ---
 <div style="margin-bottom:50px;">
 </div>

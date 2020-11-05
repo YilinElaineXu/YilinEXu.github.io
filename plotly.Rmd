@@ -1,35 +1,94 @@
 ---
-title: "Plotly"
+title: "Plotly: Plots for _instacart_ from p8105 datasets"
 output: 
   html_document:
     toc: true
     toc_float: true
-    theme: flatly
+    code_folding: hide
+    theme: paper
 ---
 
-# This is plotly set up
+<div style="margin-bottom:30px;">
+</div>
 
 ```{r, include=FALSE}
 library(p8105.datasets)
 library(tidyverse)
 library(plotly)
+data("instacart")
 ```
 
+### Bar plot: shows the number of each type products in baking ingredients.
+```{r barplot, warning=FALSE}
+instacart_bar = 
+  instacart %>%
+	filter(aisle == "baking ingredients") %>% 
+  count(product_name) %>%
+  filter(n > 100)  %>%
+  mutate(
+    aisle = factor(product_name),
+    aisle = fct_reorder(product_name, n)
+  ) %>%
+  plot_ly(
+    x = ~aisle, y = ~n, type = "bar",colors = "viridis",
+    text = ~product_name, color = ~aisle, alpha = 0.5) %>% 
+  layout(
+    xaxis = list(title = FALSE),
+    yaxis = list(title = "Count")
+  )
+
+instacart_bar
+```
+
+<div style="margin-bottom:50px;">
+</div>
+
+### Scatter plot: shows the most popular items in each aisle and the number of times each item is ordered.
+```{r}
+insta_sca = instacart %>% 
+  group_by(aisle) %>% 
+  count(product_name) %>%
+  filter(n < 3500) %>%
+  mutate(rank = min_rank(desc(n))) %>% 
+  filter(rank <2) %>% 
+  arrange(desc(n)) %>%
+  plot_ly(
+    x = ~product_name, y = ~n, color = ~aisle, text = ~product_name,
+    type = "scatter", colors = "viridis", mode = "markers"
+  ) %>% 
+  layout(
+    xaxis = list(title = FALSE),
+    yaxis = list(title = "Count")
+  )
+
+insta_sca
+```
+
+<div style="margin-bottom:50px;">
+</div>
+
+### Box plot: shows the order-hour distribution of top 5 yogurts.
 
 ```{r}
-data("instacart")
+insta_fil = instacart %>%
+  filter(aisle == "yogurt") %>% 
+  count(product_name) %>%
+  filter(n>50) %>%
+  mutate(rank = min_rank(desc(n)))%>% 
+  filter(rank < 6)
 
-instacart_rank = 
-  instacart %>%
-  count(aisle) %>% 
-	filter(n > 1000) %>% 
-	mutate(
-		aisle = factor(aisle),
-		aisle = fct_reorder(aisle, n)
-	) %>%
-	mutate(rank = min_rank(desc(n))) %>% 
-	filter(rank < 50) %>% 
-	arrange(aisle, rank)
-  
+insta_box = instacart %>%
+  filter(product_name %in% insta_fil$product_name) %>%
+  plot_ly(
+    x = ~product_name, y = ~order_hour_of_day,  color = ~product_name, 
+    type = "box", colors = "viridis") %>%
+  layout(
+    xaxis = list(title = FALSE),
+    yaxis = list(title = "Order-hour of the day"))
+
+insta_box
 ```
+
+
+
 
