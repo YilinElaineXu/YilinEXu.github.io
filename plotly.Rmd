@@ -30,8 +30,7 @@ instacart_bar =
     aisle = fct_reorder(product_name, n)
   ) %>%
   plot_ly(
-    x = ~aisle, y = ~n, type = "bar",colors = "viridis",
-    text = ~product_name, color = ~aisle, alpha = 0.5) %>% 
+    x = ~aisle, y = ~n, type = "bar",colors = "viridis",color = ~aisle, alpha = 0.5) %>% 
   layout(
     xaxis = list(title = FALSE),
     yaxis = list(title = "Count")
@@ -53,7 +52,7 @@ insta_sca = instacart %>%
   filter(rank <2) %>% 
   arrange(desc(n)) %>%
   plot_ly(
-    x = ~product_name, y = ~n, color = ~aisle, text = ~product_name,
+    x = ~product_name, y = ~n, color = ~aisle,
     type = "scatter", colors = "viridis", mode = "markers"
   ) %>% 
   layout(
