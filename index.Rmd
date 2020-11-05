@@ -6,26 +6,52 @@ output:
     toc_float: true
     theme: flatly
 ---
-<div style="margin-bottom:50px;">
-</div>
 
-![](image/image1.jpg)
-
-<div style="margin-bottom:50px;">
-</div>
-
-### More about me
-
-First year Master student major in Biostatistics at Columbia University.
-
-* [About me](about.html)
-
+Welcome to my page! This is a webpage for my data science class [P8105](https://p8105.com/). You can also see introduction about me and my working experience.
 
 <div style="margin-bottom:30px;">
 </div>
 
-### Interests
+<img src="image/image1.jpg" style="width:75%">
 
-Photogrphing, painting and printmaking. Welcome to check out my photosite.
+<div style="margin-bottom:50px;">
+</div>
+
+## Meet Libby
+
+This is Libby, my best friend's puppy. I got to know her for five years, and I'm her favorite person while I'm staying in my friend's house. She is the cutest little thing. She is always playful and her little body is very energetic.
+
+<img src="image/P6070172.jpg" style="width:75%">
+
+<div style="margin-bottom:50px;">
+</div>
+
+## About me
+
+I received a BS in Applied Math and Statistics from [University of Massachusetts, Amherst](https://www.umass.edu/) in 2020.
+
+Right now, I'm a first year Master student major in [Biostatistics](http://www.mailman.columbia.edu/academic-departments/biostatistics) at [Columbia University](https://www.columbia.edu/).
+
+* [About me](about.html)
+
+
+<div style="margin-bottom:50px;">
+</div>
+
+## Interests
+
+I love photographing, painting and printmaking.
+
+<div style="margin-bottom:20px;">
+</div>
+
+<img src="image/Elaine-print5.jpg" style="width:50%">
+
+_Struggle 5. 2020, Digital Mixed Media, Monoprint on paper._
+
+<div style="margin-bottom:20px;">
+</div>
+
+If you wnat to see more photos and art works, please check out my photosite and Instagram.
 
 * [Photosite](https://elainexu0421.wixsite.com/photosite)

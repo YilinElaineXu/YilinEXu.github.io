@@ -17,6 +17,19 @@ library(plotly)
 
 
 ```{r}
+data("instacart")
 
+instacart_rank = 
+  instacart %>%
+  count(aisle) %>% 
+	filter(n > 1000) %>% 
+	mutate(
+		aisle = factor(aisle),
+		aisle = fct_reorder(aisle, n)
+	) %>%
+	mutate(rank = min_rank(desc(n))) %>% 
+	filter(rank < 50) %>% 
+	arrange(aisle, rank)
+  
 ```
 
