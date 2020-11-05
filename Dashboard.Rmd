@@ -1,0 +1,93 @@
+---
+title: "Dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    source: embed
+    theme: paper
+---
+
+```{r setup, include=FALSE}
+library(p8105.datasets)
+library(tidyverse)
+library(plotly)
+data("instacart")
+
+library(flexdashboard)
+```
+
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r barplot, warning=FALSE}
+instacart_bar = 
+  instacart %>%
+	filter(aisle == "baking ingredients") %>% 
+  count(product_name) %>%
+  filter(n > 100)  %>%
+  mutate(
+    aisle = factor(product_name),
+    aisle = fct_reorder(product_name, n)
+  ) %>%
+  plot_ly(
+    x = ~aisle, y = ~n, type = "bar",colors = "viridis",
+    text = ~product_name, color = ~aisle, alpha = 0.5) %>% 
+  layout(
+    xaxis = list(title = FALSE),
+    yaxis = list(title = "Count")
+  )
+
+instacart_bar
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+insta_sca = instacart %>% 
+  group_by(aisle) %>% 
+  count(product_name) %>%
+  filter(n < 3500) %>%
+  mutate(rank = min_rank(desc(n))) %>% 
+  filter(rank <2) %>% 
+  arrange(desc(n)) %>%
+  plot_ly(
+    x = ~product_name, y = ~n, color = ~aisle, text = ~product_name,
+    type = "scatter", colors = "viridis", mode = "markers"
+  ) %>% 
+  layout(
+    xaxis = list(title = FALSE),
+    yaxis = list(title = "Count")
+  )
+
+insta_sca
+```
+
+### Chart C
+
+```{r}
+insta_fil = instacart %>%
+  filter(aisle == "yogurt") %>% 
+  count(product_name) %>%
+  filter(n>50) %>%
+  mutate(rank = min_rank(desc(n)))%>% 
+  filter(rank < 6)
+
+insta_box = instacart %>%
+  filter(product_name %in% insta_fil$product_name) %>%
+  plot_ly(
+    x = ~product_name, y = ~order_hour_of_day,  color = ~product_name, 
+    type = "box", colors = "viridis") %>%
+  layout(
+    xaxis = list(title = FALSE),
+    yaxis = list(title = "Order-hour of the day"))
+
+insta_box
+```
+
